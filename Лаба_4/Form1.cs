@@ -16,9 +16,10 @@ namespace Лаба_4
         {
             InitializeComponent();
         }
-
+        //inputPercentNumber.Text
         private void next_Click(object sender, EventArgs e)
         {
+            string str = inputPercentNumber.Text;
             double num = Convert.ToDouble(inputNumber.Text);
             double Percent = Convert.ToDouble(inputPercentNumber.Text);
 
@@ -37,6 +38,15 @@ namespace Лаба_4
             if(e.KeyValue == (char)Keys.Enter)
             {
                 next_Click(next, null);
+            }
+        }
+
+        private void inputPercentNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8 && number != 44)
+            {
+                e.Handled = true;
             }
         }
     }

@@ -76,6 +76,7 @@
             this.inputPercentNumber.Name = "inputPercentNumber";
             this.inputPercentNumber.Size = new System.Drawing.Size(64, 26);
             this.inputPercentNumber.TabIndex = 3;
+            this.inputPercentNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputPercentNumber_KeyPress);
             // 
             // inputNumber
             // 
