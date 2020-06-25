@@ -36,6 +36,7 @@
             this.reset = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
             this.outputNumber = new System.Windows.Forms.TextBox();
+            this.Error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,6 +77,7 @@
             this.inputPercentNumber.Name = "inputPercentNumber";
             this.inputPercentNumber.Size = new System.Drawing.Size(64, 26);
             this.inputPercentNumber.TabIndex = 3;
+            this.inputPercentNumber.Enter += new System.EventHandler(this.inputPercentNumber_Enter);
             this.inputPercentNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputPercentNumber_KeyPress);
             // 
             // inputNumber
@@ -113,17 +115,30 @@
             // outputNumber
             // 
             this.outputNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outputNumber.Location = new System.Drawing.Point(231, 126);
+            this.outputNumber.Location = new System.Drawing.Point(231, 139);
             this.outputNumber.Multiline = true;
             this.outputNumber.Name = "outputNumber";
             this.outputNumber.Size = new System.Drawing.Size(152, 35);
             this.outputNumber.TabIndex = 7;
+            // 
+            // Error
+            // 
+            this.Error.AutoSize = true;
+            this.Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Error.ForeColor = System.Drawing.Color.Red;
+            this.Error.Location = new System.Drawing.Point(194, 102);
+            this.Error.Name = "Error";
+            this.Error.Size = new System.Drawing.Size(236, 25);
+            this.Error.TabIndex = 8;
+            this.Error.Text = "Вы не ввели значение";
+            this.Error.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 254);
+            this.Controls.Add(this.Error);
             this.Controls.Add(this.outputNumber);
             this.Controls.Add(this.next);
             this.Controls.Add(this.reset);
@@ -151,6 +166,7 @@
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Button next;
         private System.Windows.Forms.TextBox outputNumber;
+        private System.Windows.Forms.Label Error;
     }
 }
 
